@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Apps
+    # local apps
     "link_plant",
-    # Third Party
+    # third party
     "crispy_forms",
     "crispy_tailwind",
 ]
