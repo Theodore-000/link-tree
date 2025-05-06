@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link Tree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold text-indigo-600">LinkTree</a>
+        <div class="space-x-4">
+          <a
+            href="{% url 'link-list' %}"
+            class="text-gray-700 hover:text-indigo-600"
+            >Home</a
+          >
+          <a
+            href="{% url 'link-create' %}"
+            class="text-gray-700 hover:text-indigo-600"
+            >Create Link</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="text-center py-10">
+      <h1 class="text-4xl font-bold">Link Tree</h1>
+    </header>
+
+    <!-- Content -->
+    <main class="flex-grow px-4 max-w-4xl mx-auto">
+      {% block content %} {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-white shadow-md py-4 text-center text-sm text-gray-500 mt-10">
+      &copy; 2025 LinkTree. All rights reserved.
+    </footer>
+  </body>
+</html>

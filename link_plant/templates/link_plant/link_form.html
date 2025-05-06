@@ -1,0 +1,13 @@
+{% extends 'link_plant/_base.html' %} {% block content %}
+{% load tailwind_filters %}
+
+<h1 class="text-4xl">Link Form</h1>
+<hr />
+<form method="POST">
+  {% csrf_token %} {{ form|crispy }}
+  <input
+    type="submit"
+    class="bg-gray-900 text-white cursor-pointer rounded-md px-2 py-3"
+    value="Save Link" />
+</form>
+{% endblock content %}

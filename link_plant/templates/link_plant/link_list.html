@@ -1,0 +1,35 @@
+{% extends 'link_plant/_base.html' %}
+
+{% block content %}
+<div class="overflow-x-auto bg-white shadow-md rounded-lg p-6">
+  <table class="min-w-full table-auto text-left border border-gray-200">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="px-4 py-2 border">Text</th>
+        <th class="px-4 py-2 border">URL</th>
+        <th class="px-4 py-2 border">Profile</th>
+        <th class="px-4 py-2 border">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for link in object_list %}
+      <tr class="hover:bg-gray-50">
+        <td class="px-4 py-2 border">{{ link.text }}</td>
+        <td class="px-4 py-2 border">
+          <a href="{{ link.url }}" target="_blank" class="text-blue-600 hover:underline">{{ link.url }}</a>
+        </td>
+        <td class="px-4 py-2 border">{{ link.profile }}</td>
+        <td class="px-4 py-2 border space-x-2">
+          <a class="text-indigo-600 hover:underline">Edit</a>
+          <a class="text-red-600 hover:underline">Delete</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="4" class="text-center px-4 py-4 text-gray-500">No links found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
